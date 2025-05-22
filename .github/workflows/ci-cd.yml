@@ -25,7 +25,7 @@ jobs:
       - name: Restore
         run: dotnet restore
 
-      - name: Debug: show repo contents
+      - name: Debug
         run: |
           pwd
           ls -R .
