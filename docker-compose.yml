@@ -1,0 +1,18 @@
+services:
+  service-a:
+    build:
+      context: ./Service-A
+      dockerfile: Dockerfile
+    ports:
+      - "5001:80"
+
+  service-b:
+    build:
+      context: ./Service-B
+      dockerfile: Dockerfile
+    ports:
+      - "5002:80"
+    environment:
+      - SERVICE_A_URL=http://service-a/hello
+    depends_on:
+      - service-a

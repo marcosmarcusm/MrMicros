@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.36105.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service-A", "Service-A\Service-A.csproj", "{D76B3659-2EEB-4C0B-AF07-6EC1045BA630}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service-B", "Service-B\Service-B.csproj", "{31CACE3D-48F4-4BD8-B6D4-226D3498207B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "k8s-manifests", "k8s-manifests", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "service-a", "service-a", "{D3087D50-CED5-4BDB-A8C5-D0E34A3DD14A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "service-b", "service-b", "{6BBD7445-7DE9-4129-84DC-E1CC598AF93D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "terraform", "terraform", "{BC7DF241-14D1-4150-B6C7-A5C9F8B23715}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D76B3659-2EEB-4C0B-AF07-6EC1045BA630}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D76B3659-2EEB-4C0B-AF07-6EC1045BA630}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D76B3659-2EEB-4C0B-AF07-6EC1045BA630}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D76B3659-2EEB-4C0B-AF07-6EC1045BA630}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31CACE3D-48F4-4BD8-B6D4-226D3498207B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31CACE3D-48F4-4BD8-B6D4-226D3498207B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31CACE3D-48F4-4BD8-B6D4-226D3498207B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31CACE3D-48F4-4BD8-B6D4-226D3498207B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D3087D50-CED5-4BDB-A8C5-D0E34A3DD14A} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{6BBD7445-7DE9-4129-84DC-E1CC598AF93D} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B794791E-37D1-4D76-9A4D-A12B3C633F0B}
+	EndGlobalSection
+EndGlobal
