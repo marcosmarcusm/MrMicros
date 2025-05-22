@@ -1,0 +1,61 @@
+name: Build and Push to ACR
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    env:
+      ACR_LOGIN_SERVER: ${{ secrets.ACR_LOGIN_SERVER }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore
+        run: dotnet restore
+
+      - name: Publish Service A
+        run: dotnet publish Service-A/ServiceA.csproj \
+             --configuration Release \
+             --output Service-A/publish
+
+      - name: Publish Service B
+        run: dotnet publish Service-B/ServiceB.csproj \
+             --configuration Release \
+             --output Service-B/publish
+
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: ACR Login
+        uses: azure/docker-login@v1
+        with:
+          login-server: ${{ env.ACR_LOGIN_SERVER }}
+
+      - name: Build & Push Service A
+        uses: docker/build-push-action@v3
+        with:
+          context: Service-A
+          file:    Service-A/Dockerfile
+          push:    true
+          tags:    ${{ env.ACR_LOGIN_SERVER }}/servicea:${{ github.sha }}
+
+      - name: Build & Push Service B
+        uses: docker/build-push-action@v3
+        with:
+          context: Service-B
+          file:    Service-B/Dockerfile
+          push:    true
+          tags:    ${{ env.ACR_LOGIN_SERVER }}/serviceb:${{ github.sha }}
