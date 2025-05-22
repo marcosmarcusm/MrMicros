@@ -26,12 +26,14 @@ jobs:
         run: dotnet restore
 
       - name: Publish Service A
-        run: dotnet publish Service-A/ServiceA.csproj \
+        run: |
+            dotnet publish Service-A/ServiceA.csproj \
              --configuration Release \
              --output Service-A/publish
 
       - name: Publish Service B
-        run: dotnet publish Service-B/ServiceB.csproj \
+        run: |
+            dotnet publish Service-B/ServiceB.csproj \
              --configuration Release \
              --output Service-B/publish
 
