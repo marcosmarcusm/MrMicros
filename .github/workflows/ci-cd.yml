@@ -32,13 +32,13 @@ jobs:
 
       - name: Publish Service A
         run: |
-            dotnet publish Service-A/ServiceA.csproj \
+            dotnet publish Service-A/Service-A.csproj \
              --configuration Release \
              --output Service-A/publish
 
       - name: Publish Service B
         run: |
-            dotnet publish Service-B/ServiceB.csproj \
+            dotnet publish Service-B/Service-B.csproj \
              --configuration Release \
              --output Service-B/publish
 
