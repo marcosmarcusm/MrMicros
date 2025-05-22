@@ -25,6 +25,11 @@ jobs:
       - name: Restore
         run: dotnet restore
 
+      - name: Debug: show repo contents
+        run: |
+          pwd
+          ls -R .
+
       - name: Publish Service A
         run: |
             dotnet publish Service-A/ServiceA.csproj \
