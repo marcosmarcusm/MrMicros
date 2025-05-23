@@ -43,7 +43,7 @@ jobs:
              --output Service-B/publish
 
       - name: Azure Login
-        uses: azure/login@v1
+        uses: Azure/login@v2.3.0
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
