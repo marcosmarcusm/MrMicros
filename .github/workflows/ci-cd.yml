@@ -56,6 +56,8 @@ jobs:
         uses: azure/docker-login@v1
         with:
           login-server: ${{ env.ACR_LOGIN_SERVER }}
+          username: ${{ ACR_USERNAME }}
+          password: ${{ ACR_PASSWORD }}
 
       - name: Build & Push Service A
         uses: docker/build-push-action@v3
