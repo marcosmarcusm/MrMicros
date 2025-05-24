@@ -9,6 +9,7 @@ on:
 
 jobs:
   build-and-push:
+    environment: Dev-Env
     permissions:
       id-token: write 
     runs-on: ubuntu-latest
